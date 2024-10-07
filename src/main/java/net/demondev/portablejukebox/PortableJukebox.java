@@ -1,6 +1,7 @@
 package net.demondev.portablejukebox;
 
 import com.mojang.logging.LogUtils;
+import net.demondev.portablejukebox.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -17,7 +18,7 @@ import org.slf4j.Logger;
 public class PortableJukebox
 {
 
-    public static final String MOD_ID = "portable_jukebox";
+    public static final String MOD_ID = "portablejukebox";
     private static final Logger LOGGER = LogUtils.getLogger();
     public PortableJukebox()
     {
@@ -25,6 +26,8 @@ public class PortableJukebox
 
 
         modEventBus.addListener(this::commonSetup);
+
+        ModItems.register(modEventBus);
 
 
 
